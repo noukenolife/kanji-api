@@ -23,10 +23,9 @@ class JDBCAccountDAO extends JDBCGenericDAO[AccountRecord] {
           .and
           .eq(a.password, password)
         )
-      }.recover{ case e: Throwable => println(e); throw e }.map {
+      }.map {
         _.map(Right(_)).getOrElse(Left(RecordNotFound()))
-      }
-      .getOrElse(Left(DAOError()))
+      }.getOrElse(Left(DAOError()))
     }
   }
 }

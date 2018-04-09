@@ -18,7 +18,7 @@ class SignInImpl @Inject() (
   trans: Transactor
 )(implicit override val ec: ExecutionContext) extends SignIn {
 
-  override def invoke(input: SignInInput): EitherT[Future, AppError, SignInOutput] = trans.run { implicit ctx =>
+  override def invoke(input: SignInInput): EitherT[Future, AppError, SignInOutput] = trans.runAsync { implicit ctx =>
     auth.authenticate(Credential(Email(input.email), Password(input.password)))
       .map(SignInOutput)
       .leftMap[AppError](_ => InvalidCredential())
