@@ -3,14 +3,14 @@ package com.noukenolife.kanji.auth.jwt.authenticator
 import java.util.UUID
 
 import cats.data.EitherT
-import cats.implicits._
+import cats.implicits.catsSyntaxEither
+import cats.instances.future.catsStdInstancesForFuture
 import com.noukenolife.kanji.auth.entity.Account
 import com.noukenolife.kanji.auth.jwt.config.JWTAuthenticatorConfig
 import com.noukenolife.kanji.auth.jwt.error.InvalidToken
 import com.noukenolife.kanji.auth.repository.AccountRepository
 import com.noukenolife.kanji.auth.value.{AccountId, Credential}
 import com.noukenolife.kanji.support.{IOContext, InfraError}
-import com.noukenolife.kanji.util.TryEither
 import com.typesafe.config.ConfigFactory
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
@@ -63,11 +63,12 @@ case class JWTAuthenticator(
   }
 
   override def retrieve(token: String)(implicit ctx: IOContext, ec: ExecutionContext): EitherT[Future, InfraError, Account] = {
-    val claim = TryEither.toEither(JwtJson4s.decode(token, secretKey, JwtAlgorithm.allHmac), InvalidToken())
-    val accId = claim.flatMap { c =>
-      TryEither.toEither(Try(parse(c.content).extract[AccountId]), InvalidToken())
-    }
-    EitherT(Future(accId)).flatMap { id =>
+    val accountId = (for {
+      claim <- JwtJson4s.decode(token, secretKey, JwtAlgorithm.allHmac)
+      id <- Try(parse(claim.content).extract[AccountId])
+    } yield id).toEither.leftMap(_ => InvalidToken())
+
+    EitherT(Future(accountId)).flatMap { id =>
       accountRepository.resolve(id).leftMap(_ => InvalidToken())
     }
   }
