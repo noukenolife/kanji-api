@@ -17,7 +17,7 @@ class CheckAuthImpl @Inject()(
   trans: Transactor
 )(implicit override val ec: ExecutionContext) extends CheckAuth {
 
-  override def invoke(input: CheckAuthInput): EitherT[Future, AppError, CheckAuthOutput] = trans.run { implicit ctx =>
+  override def invoke(input: CheckAuthInput): EitherT[Future, AppError, CheckAuthOutput] = trans.runAsync { implicit ctx =>
     auth.retrieve(input.token)
       .map(CheckAuthOutput)
       .leftMap(_ => InvalidCredential())
