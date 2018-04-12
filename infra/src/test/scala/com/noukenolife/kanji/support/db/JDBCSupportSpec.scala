@@ -1,6 +1,7 @@
 package com.noukenolife.kanji.support.db
 
 import com.noukenolife.kanji.support.FakeIOContext
+import com.noukenolife.kanji.support.db.jdbc.{JDBCIOContext, JDBCSupport}
 import com.noukenolife.kanji.support.error.InvalidIOContext
 import org.scalatest.{Matchers, WordSpec}
 import scalikejdbc._

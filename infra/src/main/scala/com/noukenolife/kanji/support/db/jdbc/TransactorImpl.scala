@@ -1,9 +1,8 @@
-package com.noukenolife.kanji.support.db
-
-import javax.inject.Inject
+package com.noukenolife.kanji.support.db.jdbc
 
 import cats.data.EitherT
 import com.noukenolife.kanji.support.{IOContext, Transactor}
+import javax.inject.Inject
 import scalikejdbc.DB
 
 import scala.concurrent.{ExecutionContext, Future}

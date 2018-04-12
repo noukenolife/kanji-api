@@ -1,6 +1,7 @@
 package com.noukenolife.kanji.support
 
-import com.noukenolife.kanji.support.db.{CRUDMapper, Record}
+import com.noukenolife.kanji.support.db.dao.CRUDMapper
+import com.noukenolife.kanji.support.db.record.Record
 import scalikejdbc.WrappedResultSet
 import skinny.orm.Alias
 

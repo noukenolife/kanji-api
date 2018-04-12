@@ -1,7 +1,7 @@
 package com.noukenolife.kanji.support.repository
 
 import cats.data.EitherT
-import com.noukenolife.kanji.support.db.JDBCGenericDAO
+import com.noukenolife.kanji.support.db.dao.JDBCGenericDAO
 import com.noukenolife.kanji.support.entity.FakeEntity
 import com.noukenolife.kanji.support.error.{EntityNotFound, RecordNotFound}
 import com.noukenolife.kanji.support.record.FakeRecord

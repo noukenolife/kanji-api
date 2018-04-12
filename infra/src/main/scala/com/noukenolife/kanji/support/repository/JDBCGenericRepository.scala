@@ -2,7 +2,9 @@ package com.noukenolife.kanji.support.repository
 
 import cats.data.EitherT
 import cats.implicits._
-import com.noukenolife.kanji.support.db.{JDBCGenericDAO, JDBCSupport, Record}
+import com.noukenolife.kanji.support.db.dao.JDBCGenericDAO
+import com.noukenolife.kanji.support.db.jdbc.JDBCSupport
+import com.noukenolife.kanji.support.db.record.Record
 import com.noukenolife.kanji.support.error.{DomainError, EntityNotFound}
 import com.noukenolife.kanji.support.{Entity, Id}
 

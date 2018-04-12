@@ -1,4 +1,4 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.jdbc
 
 import cats.data._
 import cats.implicits._

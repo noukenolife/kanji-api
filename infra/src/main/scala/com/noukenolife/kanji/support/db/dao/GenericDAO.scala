@@ -1,6 +1,7 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.dao
 
 import cats.data.EitherT
+import com.noukenolife.kanji.support.db.record.Record
 import com.noukenolife.kanji.support.{IOContext, InfraError}
 
 import scala.concurrent.{ExecutionContext, Future}

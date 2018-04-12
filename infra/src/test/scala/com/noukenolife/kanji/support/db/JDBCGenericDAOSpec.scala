@@ -2,6 +2,8 @@ package com.noukenolife.kanji.support.db
 
 import cats.implicits._
 import com.noukenolife.kanji.support.IOContext
+import com.noukenolife.kanji.support.db.dao.{CRUDMapper, JDBCGenericDAO}
+import com.noukenolife.kanji.support.db.jdbc.JDBCIOContext
 import com.noukenolife.kanji.support.error.RecordNotFound
 import com.noukenolife.kanji.support.record.FakeRecord
 import org.scalatest.{Matchers, fixture}

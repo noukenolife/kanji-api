@@ -3,7 +3,8 @@ package com.noukenolife.kanji.auth.db
 import cats.implicits._
 import com.noukenolife.kanji.auth.db.dao.JDBCAccountDAO
 import com.noukenolife.kanji.auth.db.record.AccountRecord
-import com.noukenolife.kanji.support.db.{Connection, JDBCIOContext}
+import com.noukenolife.kanji.support.db.Connection
+import com.noukenolife.kanji.support.db.jdbc.JDBCIOContext
 import org.scalatest.{Matchers, fixture}
 import scalikejdbc._
 import scalikejdbc.DBSession

@@ -1,6 +1,7 @@
 package com.noukenolife.kanji.support.repository
 
-import com.noukenolife.kanji.support.db.{GenericDAO, Record}
+import com.noukenolife.kanji.support.db.dao.GenericDAO
+import com.noukenolife.kanji.support.db.record.Record
 import com.noukenolife.kanji.support.{Entity, Id, Repository}
 
 trait GenericRepository[I <: Id[_], E <: Entity[I], R <: Record] extends Repository[I, E] {

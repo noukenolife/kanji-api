@@ -1,7 +1,10 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.dao
+
 import cats.data.EitherT
 import cats.implicits.catsSyntaxEither
 import com.noukenolife.kanji.support.InfraError
+import com.noukenolife.kanji.support.db.jdbc.JDBCSupport
+import com.noukenolife.kanji.support.db.record.Record
 import com.noukenolife.kanji.support.error.{DAOError, RecordNotFound}
 
 import scala.concurrent.{ExecutionContext, Future}

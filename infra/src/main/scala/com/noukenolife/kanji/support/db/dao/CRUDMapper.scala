@@ -1,5 +1,6 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.dao
 
+import com.noukenolife.kanji.support.db.record.Record
 import skinny.orm.SkinnyCRUDMapper
 
 trait CRUDMapper[R <: Record] extends SkinnyCRUDMapper[R] {
@@ -13,6 +14,4 @@ trait CRUDMapper[R <: Record] extends SkinnyCRUDMapper[R] {
     * @see https://github.com/scalikejdbc/scalikejdbc/blob/b530be9cbb43967533d16e0e1c27387eebad5f17/scalikejdbc-interpolation/src/main/scala/scalikejdbc/SQLSyntaxSupportFeature.scala#L154
     */
   override def columnNames: Seq[String]
-
-
 }

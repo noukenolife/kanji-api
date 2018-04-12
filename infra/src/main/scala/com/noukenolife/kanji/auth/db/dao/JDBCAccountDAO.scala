@@ -3,7 +3,7 @@ package com.noukenolife.kanji.auth.db.dao
 import cats.data.EitherT
 import com.noukenolife.kanji.auth.db.record.AccountRecord
 import com.noukenolife.kanji.support.InfraError
-import com.noukenolife.kanji.support.db.{CRUDMapper, JDBCGenericDAO}
+import com.noukenolife.kanji.support.db.dao.{CRUDMapper, JDBCGenericDAO}
 import com.noukenolife.kanji.support.error.{DAOError, RecordNotFound}
 import scalikejdbc._
 

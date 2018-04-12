@@ -1,4 +1,4 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.jdbc
 
 import com.noukenolife.kanji.support.IOContext
 import scalikejdbc.{AutoSession, DBSession}
