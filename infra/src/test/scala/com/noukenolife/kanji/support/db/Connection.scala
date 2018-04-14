@@ -1,16 +1,16 @@
 package com.noukenolife.kanji.support.db
 
+import com.noukenolife.kanji.support.db.jdbc.DefaultDatabase
 import org.scalatest.{BeforeAndAfterAll, Suite}
-import skinny.DBSettings
 
 trait Connection extends BeforeAndAfterAll {
   self: Suite =>
 
   override protected def beforeAll(): Unit = {
-    DBSettings.initialize()
+    DefaultDatabase.init()
   }
 
   override protected def afterAll(): Unit = {
-    DBSettings.destroy()
+    DefaultDatabase.destroy()
   }
 }
