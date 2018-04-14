@@ -9,7 +9,8 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "6.0.6",
   "org.scalikejdbc" %% "scalikejdbc" % "3.1.0",
   "org.scalikejdbc" %% "scalikejdbc-syntax-support-macro" % "3.1.0",
-  "org.skinny-framework" %% "skinny-orm" % "2.5.2"
+  "org.skinny-framework" %% "skinny-orm" % "2.5.2",
+  "com.zaxxer" % "HikariCP" % "3.1.0"
 )
 
 libraryDependencies ++= Seq(

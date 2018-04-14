@@ -7,7 +7,7 @@ import scalikejdbc.DB
 
 import scala.concurrent.{ExecutionContext, Future}
 
-class TransactorImpl @Inject() extends Transactor {
+class JDBCTransactorImpl @Inject() extends Transactor {
 
   override def runAsync[L, R](f: IOContext => EitherT[Future, L, R])
     (implicit ec: ExecutionContext): EitherT[Future, L, R] = EitherT {

@@ -1,14 +1,15 @@
-package com.noukenolife.kanji.support.db
+package com.noukenolife.kanji.support.db.dao
 
 import com.noukenolife.kanji.support.FakeIOContext
+import com.noukenolife.kanji.support.db.Connection
 import com.noukenolife.kanji.support.db.jdbc.{JDBCIOContext, JDBCSupport}
 import com.noukenolife.kanji.support.error.InvalidIOContext
 import org.scalatest.{Matchers, WordSpec}
 import scalikejdbc._
 
 import scala.concurrent.Await
-import scala.concurrent.duration.Duration
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration.Duration
 
 class JDBCSupportSpec extends WordSpec with Matchers with JDBCSupport with Connection {
 
